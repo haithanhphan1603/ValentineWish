@@ -1,4 +1,9 @@
 // Animation Timeline
+const tenAnimation = {
+  opacity: 0,
+  x: 20,
+  rotation: -45,
+};
 const animationTimeline = () => {
   // Spit chars that needs to be animated individually
   const textBoxChars = document.getElementsByClassName("hbd-chatbox")[0];
@@ -88,7 +93,7 @@ const animationTimeline = () => {
       0.05
     )
     .to(".fake-btn", 0.1, {
-      backgroundColor: "rgb(127, 206, 248)",
+      backgroundColor: "rgb(255, 208, 236)",
     })
     .to(
       ".four",
@@ -108,7 +113,7 @@ const animationTimeline = () => {
     .to(".idea-3 strong", 0.5, {
       scale: 1.2,
       x: 10,
-      backgroundColor: "rgb(21, 161, 237)",
+      backgroundColor: "#FF9BD2",
       color: "#fff",
     })
     .to(".idea-3", 0.7, ideaTextTransLeave, "+=1.5")
@@ -222,7 +227,7 @@ const animationTimeline = () => {
       {
         scale: 1,
         rotationY: 0,
-        color: "#ff69b4",
+        color: "#FFD0EC",
         ease: Expo.easeOut,
       },
       0.1,
@@ -271,7 +276,7 @@ const animationTimeline = () => {
   // Restart Animation on click
   const replyBtn = document.getElementById("replay");
   replyBtn.addEventListener("click", () => {
-    tl.restart();
+    window.open("https://hoacuameo.netlify.app/", "_blank");
   });
 };
 
@@ -303,3 +308,7 @@ const resolveFetch = () => {
 };
 
 resolveFetch().then(animationTimeline());
+
+onload = () => {
+  document.body.classList.remove("container");
+};
